@@ -3,16 +3,49 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import {HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { kitchenItemsComponent } from './kitchen-items/kitchen-items.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
+import { NewArrivalsComponent } from './new-arrivals/new-arrivals.component';
+import { DecorItemsComponent } from './decor-items/decor-items.component';
+import { AddItemsComponent } from './add-items/add-items.component';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    kitchenItemsComponent,
+    NewArrivalsComponent,
+    DecorItemsComponent,
+    AddItemsComponent,
+    ProductDetailsComponent,
+    
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HeaderComponent,
+    MatTabsModule,
+    HttpClientModule,
+    MatCardModule,
+    MatButtonModule,
+    CarouselModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [BsModalService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

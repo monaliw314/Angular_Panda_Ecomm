@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">{{product.title}}</h4>
+        <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true" class="visually-hidden">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="product-image">
+            <!-- <img mat-card-image [src]="productImage" alt="logo" height="100"> -->
+            <!-- image slider future implement -->
+            <carousel>
+                <slide>
+                  <img [src]="productImage" alt="first slide" height="100">
+                </slide>
+            </carousel>
+        </div>
+        <div class="description">
+            <p>{{product.desc}}</p>
+        </div>
+        <div class="product-price">
+            MRP {{product.price}}
+        </div>
+        <div class="text-center">
+          <img [src]="productReturn" alt="logo" height="50">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button mat-stroked-button color="accent">Add to cart</button> 
+        <button mat-raised-button color="accent">Buy Now</button> 
+      </div>
+</div>
+

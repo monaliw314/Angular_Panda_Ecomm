@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {  font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.example-card {
+    max-width: 350px;
+  }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .example-card {
+    width: calc(33.33% - 20px); /* Adjust the width and margins as needed */
+    margin-top: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #CBC3E3;
+  }
+
+  
+  
