@@ -4,6 +4,7 @@ import {SharedService} from '../shared.service';
 import { Router } from '@angular/router';
 import { BsModalService, BsModalRef, ModalOptions } from 'ngx-bootstrap/modal';
 import { ProductDetailsComponent } from '../product-details/product-details.component';
+import { EditItemComponent } from '../edit-item/edit-item.component';
 @Component({
   selector: 'app-kitchen-items',
   templateUrl: './kitchen-items.component.html',
@@ -20,7 +21,11 @@ export class kitchenItemsComponent implements OnInit {
     private _router : Router){}
 
   ngOnInit(){
-    this._apiService.getProductByCategory(this.category).subscribe((data:any) =>{
+    this.getKitchenProduct();
+  }
+
+  getKitchenProduct(){
+    this._apiService.getProductBy_Id_Category(null,this.category).subscribe((data:any)=>{
       this.Products = data;
     })
   }
@@ -32,5 +37,18 @@ export class kitchenItemsComponent implements OnInit {
    this.modalService.show(ProductDetailsComponent);
   }
 
+  deleteProduct(id:any){
+    this._apiService.deleteProduct(id).subscribe((data)=>{
+      console.log("data deleted",data);
+    })
+  }
 
+  updateProduct(data:any){
+  const initialState: ModalOptions = {
+    initialState:{
+      data:data
+    }
+  } 
+    this.modalService.show(EditItemComponent,initialState)
+  }
 }

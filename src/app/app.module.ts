@@ -11,6 +11,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { kitchenItemsComponent } from './kitchen-items/kitchen-items.component';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { NewArrivalsComponent } from './new-arrivals/new-arrivals.component';
 import { DecorItemsComponent } from './decor-items/decor-items.component';
@@ -20,6 +21,7 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { EditItemComponent } from './edit-item/edit-item.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +31,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     DecorItemsComponent,
     AddItemsComponent,
     ProductDetailsComponent,
+    EditItemComponent,
     
     
   ],
@@ -43,7 +46,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     MatButtonModule,
     CarouselModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
   ],
   providers: [BsModalService],
   bootstrap: [AppComponent]

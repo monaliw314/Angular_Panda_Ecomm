@@ -17,7 +17,11 @@ export class NewArrivalsComponent {
     private modalService: BsModalService,){}
 
   ngOnInit(){
-    this._apiService.getProductByCategory(this.category).subscribe((data:any) =>{
+    this.getNewArrivals();
+  }
+
+  getNewArrivals(){
+    this._apiService.getProductBy_Id_Category(null,this.category).subscribe((data:any) =>{
       this.Products = data;
     })
   }

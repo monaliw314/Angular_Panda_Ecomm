@@ -1,11 +1,11 @@
 <div class="modal-header" style="color: #673ab7">
-    <h2 class="modal-title pull-left">Add Item</h2>
+    <h2 class="modal-title pull-left">edit Item</h2>
     <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="closeModal()">
       <span aria-hidden="true" class="visually-hidden">&times;</span>
     </button>
   </div>
   <div class="modal-body">
-    <form [formGroup]="addItemForm">
+    <form [formGroup]="editItemForm">
       <div class="mb-3">
         <label  class="form-label">Product Title</label>
         <input type="text" class="form-control"  placeholder="enter input title" formControlName="title">
@@ -36,7 +36,7 @@
         </select>
       </div>
       <div class="modal-footer">
-        <button mat-raised-button color="accent" (click)="submitDetails()">Submit Details</button>
+        <button mat-raised-button color="accent" (click)="UpdateDetails(editItemForm.value)">Update Details</button>
         <button mat-raised-button (click)="closeModal()">Cancel</button>
       </div>
     </form>

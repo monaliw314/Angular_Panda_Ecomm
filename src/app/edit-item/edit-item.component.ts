@@ -3,22 +3,24 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
 @Component({
-  selector: 'app-add-items',
-  templateUrl: './add-items.component.html',
-  styleUrls: ['./add-items.component.scss']
+  selector: 'app-edit-item',
+  templateUrl: './edit-item.component.html',
+  styleUrls: ['./edit-item.component.scss']
 })
-export class AddItemsComponent implements OnInit {  
+export class EditItemComponent implements OnInit{
   constructor(private modalService: BsModalService,
     private formBuilder: FormBuilder,
     private _apiService : ApiService) {}
-
-  public addItemForm! : FormGroup
+    data: any={};
+    public editItemForm! : FormGroup
 
   ngOnInit(){
+    console.log(this.data);
     this.createAddItemForm();
+    this.patchValuesToForm();
   }
   private createAddItemForm(){
-    this.addItemForm = this.formBuilder.group({
+    this.editItemForm = this.formBuilder.group({
       title             : ['', Validators.required],
       desc              : ['', Validators.required],
       price             : ['', Validators.required],
@@ -26,14 +28,25 @@ export class AddItemsComponent implements OnInit {
       category          : ['', Validators.required],
     });
   }
-  submitDetails(){
-    console.log(this.addItemForm.value);
-    const data = JSON.stringify(this.addItemForm.value);
-    this._apiService.postProduct(data).subscribe((data)=>{
-      console.log('Product added successfully:', data);
+
+  patchValuesToForm(){
+    this.editItemForm.patchValue({
+      title             : this.data.title,
+      desc              : this.data.desc,
+      price             : this.data.price,
+      image             : '',
+      category          : this.data.category,
     })
   }
+
+  UpdateDetails(item:any){
+    this._apiService.updateProduct(this.data._id,item).subscribe((data)=>{
+      console.log("product updated successfully");
+    })
+  }
+
   closeModal(){
     this.modalService.hide();
   }
+
 }

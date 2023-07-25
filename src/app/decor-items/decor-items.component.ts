@@ -17,7 +17,11 @@ export class DecorItemsComponent {
     private modalService: BsModalService,){}
 
   ngOnInit(){
-    this._apiService.getProductByCategory(this.category).subscribe((data:any) =>{
+    this.getDecorProducts();
+  }
+
+  getDecorProducts(){
+    this._apiService.getProductBy_Id_Category(null,this.category).subscribe((data:any) =>{
       this.Products = data;
     })
   }
