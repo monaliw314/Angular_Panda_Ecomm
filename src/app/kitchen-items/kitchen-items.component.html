@@ -4,22 +4,17 @@
 
             <mat-card-header>
               <mat-card-title>{{item.title}}</mat-card-title>
-              <mat-card-subtitle>MRP - {{item.price}}</mat-card-subtitle>
+              <mat-card-subtitle>MRP ₹ {{item.price | formatAmount}}</mat-card-subtitle>
             </mat-card-header>
 
             <img mat-card-image [src]="productImage" alt="logo">
             <mat-card-content>
-               
             </mat-card-content>
                 
             <mat-card-actions >
-              <button mat-stroked-button color="primary" (click)="OpenDetailsComponent(item)">View Details
-              </button>
-              <button mat-mini-fab color="secondary" (click)="deleteProduct(item._id)" appRole>
-                <mat-icon>delete</mat-icon>
-              </button>
-              <button mat-mini-fab color="secondary" (click)="updateProduct(item)" appRole>
-                <mat-icon>edit</mat-icon>
+              <mat-icon class="icon" (click)="deleteProduct(item._id)" appRole>delete_outline</mat-icon>
+              <mat-icon class="icon" (click)="updateProduct(item)" appRole>edit_outline</mat-icon>
+              <button class="btn item-action-btn" (click)="OpenDetailsComponent(item)">View Details
               </button>
             </mat-card-actions>
           </mat-card>    

@@ -1,6 +1,6 @@
 <div class="container">
     <div class="modal-header">
-        <h4 class="modal-title pull-left">{{product.title}}</h4>
+        <h2 class=" product_title">{{product.title}}</h2>
         <button type="button" class="btn-close close pull-right" aria-label="Close" (click)="closeModal()">
           <span aria-hidden="true" class="visually-hidden">&times;</span>
         </button>
@@ -15,20 +15,22 @@
                 </slide>
             </carousel>
         </div>
-        <div class="description">
-            <p>{{product.desc}}</p>
+        <div class="product-price ">
+          MRP ₹ {{product.price | formatAmount}}
         </div>
-        <div class="product-price">
-            MRP {{product.price}}
+
+        <div class="desc-title">
+            <div class="">Description</div>
+            <p class="mt-2">{{product.desc}}</p>
         </div>
+        
         <div class="text-center">
           <img [src]="productReturn" alt="logo" height="50">
         </div>
       </div>
       <div class="modal-footer">
-        <button mat-raised-button color="accent">Update</button> 
-        <button mat-stroked-button color="accent">Add to cart</button> 
-        <button mat-raised-button color="accent">Buy Now</button> 
+        <button class="btn add-to-cart " >Add to cart</button> 
+        <!-- <button mat-raised-button >Buy Now</button>  -->
       </div>
 </div>
 

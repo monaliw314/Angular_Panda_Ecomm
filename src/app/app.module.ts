@@ -24,6 +24,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { EditItemComponent } from './edit-item/edit-item.component';
 import { LoginComponent } from './login/login.component';
 import { RoleDirective } from './role.directive';
+import { FormatAmountPipe } from './format-amount.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +37,7 @@ import { RoleDirective } from './role.directive';
     EditItemComponent,
     LoginComponent,
     RoleDirective,
+    FormatAmountPipe,
     
     
   ],
@@ -51,7 +53,7 @@ import { RoleDirective } from './role.directive';
     CarouselModule,
     ReactiveFormsModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
   ],
 
   exports:[RoleDirective],
