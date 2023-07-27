@@ -14,7 +14,7 @@ export class kitchenItemsComponent implements OnInit {
 
   Products :any =[];
   category : string ='Kitchen_&_Dining';
-  productImage = 'assets/panda_logo_.png';
+  productImage = 'assets/web_logo.png';
   constructor(private _apiService : ApiService, 
     private _sharedService : SharedService,
     private modalService: BsModalService,

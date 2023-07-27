@@ -4,6 +4,8 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
+  isAuthenticated! : boolean;
+  isrole! : string;
 
   constructor() { }
 

@@ -22,6 +22,8 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { EditItemComponent } from './edit-item/edit-item.component';
+import { LoginComponent } from './login/login.component';
+import { RoleDirective } from './role.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import { EditItemComponent } from './edit-item/edit-item.component';
     AddItemsComponent,
     ProductDetailsComponent,
     EditItemComponent,
+    LoginComponent,
+    RoleDirective,
     
     
   ],
@@ -49,6 +53,8 @@ import { EditItemComponent } from './edit-item/edit-item.component';
     FormsModule,
     MatIconModule
   ],
+
+  exports:[RoleDirective],
   providers: [BsModalService],
   bootstrap: [AppComponent]
 })

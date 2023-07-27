@@ -1,0 +1,30 @@
+.card {
+    border: none; /* Remove the border below the card header */
+}
+
+.card-header{
+    border-bottom: none;
+}
+.image-container{
+    display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+element.style {
+    cursor: pointer;
+}
+.otp-btn , .login-btn{
+    width: 100% !important;
+    border-radius: 0;
+    padding: 14px 28px;
+    font-size: calc(var(--base-text-font-size) - (var(--default-text-font-size) - 16px));
+    letter-spacing: 1.6px;
+    font-family: var(--heading-font-family);
+    font-weight: var(--heading-font-weight);
+    text-transform: uppercase;
+    background: #1a2034;
+    border-width: 1px;
+    position: relative;
+    color: white;
+}

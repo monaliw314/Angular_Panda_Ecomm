@@ -15,10 +15,10 @@
             <mat-card-actions >
               <button mat-stroked-button color="primary" (click)="OpenDetailsComponent(item)">View Details
               </button>
-              <button mat-mini-fab color="secondary" (click)="deleteProduct(item._id)">
+              <button mat-mini-fab color="secondary" (click)="deleteProduct(item._id)" appRole>
                 <mat-icon>delete</mat-icon>
               </button>
-              <button mat-mini-fab color="secondary" (click)="updateProduct(item)">
+              <button mat-mini-fab color="secondary" (click)="updateProduct(item)" appRole>
                 <mat-icon>edit</mat-icon>
               </button>
             </mat-card-actions>
